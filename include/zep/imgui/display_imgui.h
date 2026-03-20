@@ -69,6 +69,12 @@ public:
         return m_pFont;
     }
 
+    void SetImFont(ImFont* pFont, float pixelHeight)
+    {
+        m_pFont = pFont;
+        SetPixelHeight(static_cast<int>(pixelHeight));
+    }
+
 private:
     ImFont* m_pFont;
     float m_fontScale = 1.0f;
