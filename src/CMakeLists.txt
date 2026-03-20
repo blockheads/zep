@@ -76,14 +76,14 @@ LIST(APPEND SRC_INCLUDE ${ZEP_ROOT}/src ${ZEP_ROOT}/src/mcommon)
 add_library(Zep STATIC ${SOURCES})
 add_library(Zep::Zep ALIAS Zep)
 
-target_include_directories(Zep 
+target_include_directories(Zep
     PRIVATE
         ${ZEP_ROOT}/src/mcommon
         ${ZEP_ROOT}/src
         ${SRC_INCLUDE}
         ${CMAKE_BINARY_DIR}
-        ${ZEP_ROOT}/include
     PUBLIC
+        $<BUILD_INTERFACE:${ZEP_ROOT}/include>
         $<INSTALL_INTERFACE:include>
     ) 
 
